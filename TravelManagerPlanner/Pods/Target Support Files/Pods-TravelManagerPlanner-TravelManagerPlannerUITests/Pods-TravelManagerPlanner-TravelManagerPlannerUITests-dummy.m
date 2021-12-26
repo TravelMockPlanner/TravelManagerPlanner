@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_TravelManagerPlanner_TravelManagerPlannerUITests : NSObject
+@end
+@implementation PodsDummy_Pods_TravelManagerPlanner_TravelManagerPlannerUITests
+@end
