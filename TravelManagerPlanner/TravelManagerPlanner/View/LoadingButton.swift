@@ -7,14 +7,45 @@
 
 import UIKit
 
-class LoginButton: UIButton {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+class LoadingButton: UIButton {
+    
+    private let indicator   = UIActivityIndicatorView(style: .large)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupButton()
+        makeIndicator()
+    
     }
-    */
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        setupButton()
+        makeIndicator()
+    }
+    private func setupButton() {
+        layer.borderWidth   = 0.5
+        layer.borderColor   = UIColor.darkGray.cgColor
+        layer.cornerRadius  = 5
+        backgroundColor = UIColor.white
+    }
+    
+    private func makeIndicator() {
+        self.addSubview(indicator)
 
+        indicator.snp.makeConstraints { (m) in
+            m.centerX.equalTo(self.snp.centerX)
+            m.centerY.equalTo(self.snp.centerY)
+        }
+        
+    }
+    
+    public func startIndicator() {
+        self.setTitleColor(self.titleLabel?.textColor.withAlphaComponent(0), for: .normal)
+        indicator.startAnimating()
+        indicator.isUserInteractionEnabled = false
+    }
+    public func stopIndicator() {
+        self.setTitleColor(self.titleLabel?.textColor.withAlphaComponent(1), for: .normal)
+        indicator.stopAnimating()
+    }
+    
 }
