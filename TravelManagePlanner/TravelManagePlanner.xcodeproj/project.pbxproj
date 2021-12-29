@@ -101,6 +101,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		93B3C1AC277C8B8E00A302C4 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				F00F17F72778530200211A8D /* AppDelegate.swift */,
+				F00F17F92778530200211A8D /* SceneDelegate.swift */,
+				F00F18002778530500211A8D /* Assets.xcassets */,
+				F00F18022778530500211A8D /* LaunchScreen.storyboard */,
+				F00F18052778530500211A8D /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
 		EE7E0A6B8C971B07A1BFD457 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -111,7 +123,6 @@
 				77C2426C42FF74194A815543 /* Pods-TravelManagePlannerTests.debug.xcconfig */,
 				23688F06A5AF4320F9318297 /* Pods-TravelManagePlannerTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -140,13 +151,9 @@
 		F00F17F62778530200211A8D /* TravelManagePlanner */ = {
 			isa = PBXGroup;
 			children = (
-				F00F17F72778530200211A8D /* AppDelegate.swift */,
-				F00F17F92778530200211A8D /* SceneDelegate.swift */,
 				F00F17FB2778530200211A8D /* ViewController.swift */,
 				F00F17FD2778530200211A8D /* Main.storyboard */,
-				F00F18002778530500211A8D /* Assets.xcassets */,
-				F00F18022778530500211A8D /* LaunchScreen.storyboard */,
-				F00F18052778530500211A8D /* Info.plist */,
+				93B3C1AC277C8B8E00A302C4 /* SupportFiles */,
 			);
 			path = TravelManagePlanner;
 			sourceTree = "<group>";
@@ -591,17 +598,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QA5P85RJWN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TravelManagePlanner/Info.plist;
+				INFOPLIST_FILE = TravelManagePlanner/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SUY.TravelManagePlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -620,17 +628,18 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = QA5P85RJWN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = TravelManagePlanner/Info.plist;
+				INFOPLIST_FILE = TravelManagePlanner/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.SUY.TravelManagePlanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

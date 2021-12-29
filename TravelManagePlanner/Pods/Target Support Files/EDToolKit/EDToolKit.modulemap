@@ -1,0 +1,6 @@
+framework module EDToolKit {
+  umbrella header "EDToolKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
