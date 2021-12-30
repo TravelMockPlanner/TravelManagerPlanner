@@ -105,6 +105,7 @@ class SignInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegate()
         setLayout()
         setButtonAction()
         // Do any additional setup after loading the view.
@@ -206,11 +207,14 @@ class SignInViewController: UIViewController {
     }
     
     func setButtonAction() {
-        loginButton.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
-        signUpButton.addTarget(self, action: #selector(signUpAction), for: .touchUpInside)
+        loginButton.addTarget(self, action: #selector(loginButtonPressed), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(signUpButtonPressed), for: .touchUpInside)
     }
-    
-    @objc func loginAction() {
+    func setDelegate() {
+        emailTextField.delegate = self
+        pwdTextField.delegate = self
+    }
+    @objc func loginButtonPressed() {
         
         pwdTextField.resignFirstResponder()
         emailTextField.resignFirstResponder()
@@ -251,10 +255,24 @@ class SignInViewController: UIViewController {
             }
         }
     }
-    @objc func signUpAction() {
+    @objc func signUpButtonPressed() {
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SignUpViewSB") as! SignUpViewController
         self.present(vc, animated: true, completion: nil)
     }
 }
 
 
+extension SignInViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        emailTextField.resignFirstResponder()
+        pwdTextField.resignFirstResponder()
+        return true
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+}
