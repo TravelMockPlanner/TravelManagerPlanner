@@ -22,8 +22,6 @@
 		F01C83B32777410A0080D222 /* TravelManagerPlannerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F01C83B22777410A0080D222 /* TravelManagerPlannerUITestsLaunchTests.swift */; };
 		F0A9C528277C6610009EE5FE /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9C527277C6610009EE5FE /* DetailViewModel.swift */; };
 		F0A9C52A277C7713009EE5FE /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9C529277C7713009EE5FE /* SignInViewModel.swift */; };
-		F0A9C52C277C94A8009EE5FE /* HomeTabbarControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9C52B277C94A8009EE5FE /* HomeTabbarControllerViewController.swift */; };
-		F0A9C52E277E6EE9009EE5FE /* MotherNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9C52D277E6EE9009EE5FE /* MotherNavigationController.swift */; };
 		F0A9C531277E6F71009EE5FE /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9C530277E6F71009EE5FE /* ImageLoader.swift */; };
 		F0A9C534277E72ED009EE5FE /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A9C533277E72ED009EE5FE /* Observer.swift */; };
 		F0FF09B6277AB8280015D4FC /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FF09B5277AB8280015D4FC /* CartViewController.swift */; };
@@ -77,8 +75,6 @@
 		F01C83B22777410A0080D222 /* TravelManagerPlannerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelManagerPlannerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F0A9C527277C6610009EE5FE /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		F0A9C529277C7713009EE5FE /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
-		F0A9C52B277C94A8009EE5FE /* HomeTabbarControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabbarControllerViewController.swift; sourceTree = "<group>"; };
-		F0A9C52D277E6EE9009EE5FE /* MotherNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotherNavigationController.swift; sourceTree = "<group>"; };
 		F0A9C530277E6F71009EE5FE /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		F0A9C533277E72ED009EE5FE /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		F0FF09B5277AB8280015D4FC /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
@@ -236,7 +232,6 @@
 			isa = PBXGroup;
 			children = (
 				F01C8393277741080080D222 /* DetailViewController.swift */,
-				F0A9C52D277E6EE9009EE5FE /* MotherNavigationController.swift */,
 				F0FF09B5277AB8280015D4FC /* CartViewController.swift */,
 				F0FF09BA277AFEDD0015D4FC /* SignInViewController.swift */,
 				F0FF09BC277AFEE70015D4FC /* SignUpViewController.swift */,
@@ -248,7 +243,6 @@
 			isa = PBXGroup;
 			children = (
 				F0FF09B8277ABE9C0015D4FC /* ImageSliderCollectionView.swift */,
-				F0A9C52B277C94A8009EE5FE /* HomeTabbarControllerViewController.swift */,
 				F0FF09BE277B037E0015D4FC /* LoadingButton.swift */,
 			);
 			path = View;
@@ -511,12 +505,10 @@
 				F01C8390277741080080D222 /* AppDelegate.swift in Sources */,
 				F0FF09B6277AB8280015D4FC /* CartViewController.swift in Sources */,
 				F00F17EA27774CA700211A8D /* APIService.swift in Sources */,
-				F0A9C52E277E6EE9009EE5FE /* MotherNavigationController.swift in Sources */,
 				F0A9C52A277C7713009EE5FE /* SignInViewModel.swift in Sources */,
 				F01C8392277741080080D222 /* SceneDelegate.swift in Sources */,
 				F0A9C528277C6610009EE5FE /* DetailViewModel.swift in Sources */,
 				F0FF09B9277ABE9C0015D4FC /* ImageSliderCollectionView.swift in Sources */,
-				F0A9C52C277C94A8009EE5FE /* HomeTabbarControllerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
