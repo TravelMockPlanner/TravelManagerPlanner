@@ -23,7 +23,7 @@ enum GlobalConstants {
             static var invalidateTextColor: UIColor = .red
         }
         enum Background {
-            static var themeColor: UIColor = UIColor(red: 131/255, green: 247/255, blue: 178/255, alpha: 1)
+            static var themeColor: UIColor = UIColor(red: 243/255, green: 255/255, blue: 251/255, alpha: 1)
             static var loginButtonbackgroundColor: UIColor = .blue
         }
         
