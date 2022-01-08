@@ -38,6 +38,28 @@
             </objects>
             <point key="canvasLocation" x="255" y="-754"/>
         </scene>
+        <!--Custom Modal View Controller-->
+        <scene sceneID="uc3-ec-kjC">
+            <objects>
+                <viewController storyboardIdentifier="CustomModalViewSB" id="st4-VY-8bE" customClass="CustomModalViewController" customModule="TravelManagePlanner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xOL-4w-wHm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pXt-Qw-aOa" customClass="FSCalendar">
+                                <rect key="frame" x="20" y="537" width="374" height="325"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qAh-Yn-O8f"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jHu-nT-Nsj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1037.68115942029" y="-754.01785714285711"/>
+        </scene>
         <!--Sample View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
