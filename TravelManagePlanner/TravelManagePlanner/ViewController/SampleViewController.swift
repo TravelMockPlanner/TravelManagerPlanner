@@ -27,7 +27,7 @@ class SampleViewController: UIViewController {
         
     }
     @objc func buttonAction() {
-        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondSampleViewController") as! SecondSampleViewController
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SecondSampleSB") as! SecondSampleViewController
         navigationController?.pushViewController(vc, animated: true)
     }
 
