@@ -20,22 +20,16 @@ enum APIError: Int, Error {
 
 struct APIRequest {
     static let url: String = "https://eunryuplaners.com:19624"
-<<<<<<< HEAD
     static let headerDic: [String: String] = ["appCode": "TMP_iOS"]
-=======
-    
->>>>>>> c1f2c80c4b85ca55323907782cd6d312eba33525
     
     
     /// - Post
-<<<<<<< HEAD
     func getJourneyDetailImage(completion: @escaping (DestinationDetailData) -> Void) {
         let destinationDataURL = "/plan/getAllShopList.tpi" // 임시
         
         AF.request(APIRequest.url + destinationDataURL, method: .post, headers: HTTPHeaders(APIRequest.headerDic)).validate().responseString { response in
             print("",response.result)
             
-=======
     func login(loginData: UserData, completed: @escaping (Result<String, Error>) -> Void) {
         let url = "https://eunryuplaners.com:19624/mmb/checkLogin.tpi"
         var request = URLRequest(url: URL(string: url)!)
@@ -58,7 +52,6 @@ struct APIRequest {
                 print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
                 completed(Result.failure(error))
             }
->>>>>>> c1f2c80c4b85ca55323907782cd6d312eba33525
         }
     }
     

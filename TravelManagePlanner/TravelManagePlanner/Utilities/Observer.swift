@@ -2,26 +2,17 @@
 //  Observer.swift
 //  TravelManagePlanner
 //
-<<<<<<< HEAD
 //  Created by UY on 2022/01/04.
-=======
-//  Created by UY on 2022/01/08.
->>>>>>> c1f2c80c4b85ca55323907782cd6d312eba33525
 //
 
 import Foundation
 
-<<<<<<< HEAD
 final class Observer<T> {
     
     // didSet: property observer를 사용하기 위해선 초기값이 무조건 필요
     init(_ value: T) {
         self.value = value
     }
-=======
-final class Observable<T> {
-    
->>>>>>> c1f2c80c4b85ca55323907782cd6d312eba33525
     
     // Listener: 값이 변경될 때 마다 호출되며, 변경된 값을 리턴해주는 클로저
     typealias Listener = (T) -> Void
@@ -44,13 +35,6 @@ final class Observable<T> {
         }
     }
     
-<<<<<<< HEAD
-=======
-    // didSet: property observer를 사용하기 위해선 초기값이 무조건 필요
-    init(_ value: T) {
-        self.value = value
-    }
->>>>>>> c1f2c80c4b85ca55323907782cd6d312eba33525
     // bind는 View Component가 value를 Observing하게 만드는 메소드
     func bind(listener: Listener?) {
         self.listener = listener

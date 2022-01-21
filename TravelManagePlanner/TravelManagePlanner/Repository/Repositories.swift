@@ -33,27 +33,4 @@ class DestinationInfoRepositories: NSObject {
         return jsonObject
     }
     
-//    private func parseDestinationData(jsonObjext: [String: Any]) -> DestinationDetailData {
-//        let destData = (jsonObjext["data"] as! String).data(using: .utf8)
-//        let json = try String(contentsOf: destData, encoding: .utf8)
-//
-//        let destS = DestinationDetailData(idx: destData["idx"] as! String, name: destData["name"] as! String, address: destData["address"] as! String, imgUrl: [destData["imgUrl"] as! String], content: destData["content"] as! String)
-//        return destS
-//    }
-
-//    private func parseLecture(jsonObject: [String: Any]) -> Lecture {
-//        return Lecture(id: jsonObject["id"] as! String,
-//                       number: jsonObject["number"] as! String,
-//                       name: jsonObject["name"] as! String,
-//                       classfyName: jsonObject["classfy_name"] as! String,
-//                       middleClassfyName: jsonObject["middle_classfy"] as! String,
-//                       courseImage: ((jsonObject["media"] as! [String: Any])["image"] as! [String: Any])["small"] as! String,
-//                       courseImageLarge: ((jsonObject["media"] as! [String: Any])["image"] as! [String: Any])["large"] as! String,
-//                       shortDescription: jsonObject["short_description"] as! String,
-//                       orgName: jsonObject["org_name"] as! String,
-//                       start: DateUtil.parseDate(jsonObject["start"] as! String),
-//                       end: DateUtil.parseDate(jsonObject["end"] as! String),
-//                       teachers: jsonObject["teachers"] as? String,
-//                       overview: jsonObject["overview"] as? String)
-//    }
 }
