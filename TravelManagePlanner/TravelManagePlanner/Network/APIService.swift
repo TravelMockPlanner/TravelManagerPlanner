@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 enum APIError: Int, Error {
     case unknown = -1
@@ -19,16 +20,70 @@ enum APIError: Int, Error {
 
 struct APIRequest {
     static let url: String = "https://eunryuplaners.com:19624"
+<<<<<<< HEAD
     static let headerDic: [String: String] = ["appCode": "TMP_iOS"]
+=======
+    
+>>>>>>> c1f2c80c4b85ca55323907782cd6d312eba33525
     
     
     /// - Post
+<<<<<<< HEAD
     func getJourneyDetailImage(completion: @escaping (DestinationDetailData) -> Void) {
         let destinationDataURL = "/plan/getAllShopList.tpi" // 임시
         
         AF.request(APIRequest.url + destinationDataURL, method: .post, headers: HTTPHeaders(APIRequest.headerDic)).validate().responseString { response in
             print("",response.result)
             
+=======
+    func login(loginData: UserData, completed: @escaping (Result<String, Error>) -> Void) {
+        let url = "https://eunryuplaners.com:19624/mmb/checkLogin.tpi"
+        var request = URLRequest(url: URL(string: url)!)
+        let header = ["appCode": "TMP_iOS"]
+        request.timeoutInterval = 10
+        // POST 로 보낼 정보
+        
+        let params: [String: String] = ["loginId":"\(loginData.userEmail)", "loginPw":"\(loginData.userPw)"]
+        let method = HTTPMethod(rawValue: "POST")
+        // httpBody 에 parameters 추가
+        
+        AF.request(url, method: method, parameters: params, headers: HTTPHeaders(header)).responseString { (response) in
+            switch response.result {
+            case .success:
+                print(response.result)
+                print("POST 성공")
+                let re = String(data: response.data!, encoding: .utf16)
+                completed(Result.success(re!))
+            case .failure(let error):
+                print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
+                completed(Result.failure(error))
+            }
+>>>>>>> c1f2c80c4b85ca55323907782cd6d312eba33525
         }
     }
+    
+    func signUp(userData: UserData, completed: @escaping (Result<String, Error>) -> Void) {
+        let url = "https://eunryuplaners.com:19624/mmb/joinMember.tpi"
+        var request = URLRequest(url: URL(string: url)!)
+        let header = ["appCode": "TMP_iOS"]
+        request.timeoutInterval = 10
+        // POST 로 보낼 정보
+        
+        let params: [String: String] = ["userId":"\(userData.userEmail)", "userPw":"\(userData.userPw)", "name":"\(userData.name)"]
+        print(userData)
+        
+        let method = HTTPMethod(rawValue: "POST")
+        // httpBody 에 parameters 추가
+        
+        AF.request(url, method: method, parameters: params, headers: HTTPHeaders(header)).responseString { (response) in
+            switch response.result {
+            case .success:
+                completed(Result.success("POST 성공"))
+            case .failure(let error):
+                print("🚫 Alamofire Request Error\nCode:\(error._code), Message: \(error.errorDescription!)")
+                completed(Result.failure(error))
+            }
+        }
+    }
+
 }
