@@ -2,8 +2,9 @@
 //  EXViewController.swift
 //  TravelManagePlanner
 //
-//  Created by Hojin Jang on 2022/01/27.
-
+//  Created by UY on 2022/01/22.
+//
+//CommunityViewController
 
 import UIKit
 import SnapKit

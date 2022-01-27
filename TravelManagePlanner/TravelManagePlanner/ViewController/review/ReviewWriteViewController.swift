@@ -13,7 +13,7 @@ import Photos
 let photoID = "photoCell"
 
 
-class reviewWriteViewController: UIViewController {
+class ReviewWriteViewController: UIViewController {
 
     // MARK: - Properties
     var selectedAssets: [PHAsset] = []
@@ -457,7 +457,7 @@ class reviewWriteViewController: UIViewController {
 
 // MARK: - extentions
 
-extension reviewWriteViewController : UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource
+extension ReviewWriteViewController : UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("==========numberOfItemsInSection==========")
