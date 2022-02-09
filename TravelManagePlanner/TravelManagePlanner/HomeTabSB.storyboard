@@ -106,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="2532" y="1348"/>
         </scene>
-        <!--View Controller-->
+        <!--Tour Area Calendar View Controller-->
         <scene sceneID="qtn-DR-Bx0">
             <objects>
-                <viewController id="Ipp-iS-xmr" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TourAreaCalendarViewSB" id="Ipp-iS-xmr" customClass="TourAreaCalendarViewController" customModule="TravelManagePlanner" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="x4F-Ht-bLs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
