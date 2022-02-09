@@ -33,7 +33,7 @@
 		<key>FSCalendar.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>8</integer>
+			<integer>7</integer>
 		</dict>
 		<key>JJFloatingActionButton.xcscheme</key>
 		<dict>
@@ -52,7 +52,7 @@
 		<key>Pods-TravelManagePlanner-TravelManagePlannerUITests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>5</integer>
 		</dict>
 		<key>Pods-TravelManagePlanner.xcscheme</key>
 		<dict>
@@ -64,7 +64,7 @@
 		<key>Pods-TravelManagePlanner.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>9</integer>
+			<integer>8</integer>
 		</dict>
 		<key>Pods-TravelManagePlannerTests.xcscheme</key>
 		<dict>
@@ -76,7 +76,7 @@
 		<key>Pods-TravelManagePlannerTests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>6</integer>
 		</dict>
 		<key>SnapKit.xcscheme</key>
 		<dict>
