@@ -10,7 +10,7 @@ import Foundation
 class HomeTabViewModel {
     
     // 모델 소유
-    static var globalHomeTabData = HomeTabData(themeData: "", dayToGocalendar: "", dayToComecalendar: "", numPeople:"", budgetAmount: "")
+    static var globalHomeTabData = HomeTabRequest(uKey: "", title: "", startDate: "", endDate: "", inviteNum:"", price: "", theme: "", shopList: [])
     
     // repository 소유
     private var repo = HomeTabRepository()
@@ -35,28 +35,28 @@ class HomeTabViewModel {
 //    private var budgetAmount = "" // 예산
     
     func updateThemeData(userThemeData: String) {
-        HomeTabViewModel.globalHomeTabData.themeData = userThemeData
+//        HomeTabViewModel.globalHomeTabData.themeData = userThemeData
     }
     
     func updateDetailSettingData(journeyTextField: String, dayToGocalendar: String, dayToComecalendar: String, numPeople: String, budgetAmount: String) {
-        HomeTabViewModel.globalHomeTabData.themeData = journeyTextField
-        HomeTabViewModel.globalHomeTabData.dayToGocalendar = dayToGocalendar
-        HomeTabViewModel.globalHomeTabData.dayToComecalendar = dayToComecalendar
-        HomeTabViewModel.globalHomeTabData.numPeople = numPeople
-        HomeTabViewModel.globalHomeTabData.budgetAmount = budgetAmount
+//        HomeTabViewModel.globalHomeTabData.themeData = journeyTextField
+//        HomeTabViewModel.globalHomeTabData.dayToGocalendar = dayToGocalendar
+//        HomeTabViewModel.globalHomeTabData.dayToComecalendar = dayToComecalendar
+//        HomeTabViewModel.globalHomeTabData.numPeople = numPeople
+//        HomeTabViewModel.globalHomeTabData.budgetAmount = budgetAmount
     }
     
     // VM에서 repository호출, repo에서 api통신 정의
     func register() {
-        repo.setPlanRepository(homeTabData: HomeTabViewModel.globalHomeTabData) { result in
-            
-            self.isLoading = true
-            
-            print(result)
-        }
-        
-        func getDestiPlace() {
-            
-        }
+//        repo.setPlanRepository(homeTabData: HomeTabViewModel.globalHomeTabData) { result in
+//            
+//            self.isLoading = true
+//            
+//            print(result)
+//        }
+//        
+//        func getDestiPlace() {
+//            
+//        }
     }// class
 }
