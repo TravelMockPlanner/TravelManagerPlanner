@@ -11,6 +11,8 @@ class InputTravelInfoViewController: UIViewController {
 
     var viewModel = JourneyListDetailViewModel()
     
+    let storedJourneyList = DestiSearchResponse.shared.data
+    
     private lazy var journeyListDetailDateCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
