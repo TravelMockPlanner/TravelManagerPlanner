@@ -38,6 +38,11 @@ class PersonalDataTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
+        
+    override func prepareForReuse() {
+        self.backgroundColor = GlobalConstants.Color.Background.themeColor
+        label.text = ""
+    }
     
     func setLayout() {
         

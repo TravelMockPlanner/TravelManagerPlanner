@@ -34,6 +34,9 @@ class JourneyListTableViewCell: UITableViewCell {
     }()
 
     override func prepareForReuse() {
+        self.backgroundColor = GlobalConstants.Color.Background.themeColor
+        self.journeyTitleLabel.text = ""
+        journeyDate.text = ""
         self.journeyImage.image = nil
         
     }

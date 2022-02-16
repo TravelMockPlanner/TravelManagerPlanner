@@ -35,6 +35,18 @@ class JourneyListDetailCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    
+    override func prepareForReuse() {
+        self.backgroundColor = GlobalConstants.Color.Background.themeColor
+        self.thumNailImage.image = nil
+        titleLabel.text = ""
+        descLabel.text = ""
+    }
+    
     func setLayout() {
         
         self.addSubview(anchorStackView)

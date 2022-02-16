@@ -13,6 +13,7 @@ protocol PassDestinationData {
 }
 
 class JourneyListDetailPageCollectionView: UICollectionViewCell {
+    
     var delegate: PassDestinationData!
     var viewModel = JourneyListDetailPageViewModel()
     
@@ -35,6 +36,15 @@ class JourneyListDetailPageCollectionView: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+    }
+    
+    override func prepareForReuse() {
+        self.backgroundColor = GlobalConstants.Color.Background.themeColor
+    }
+    
     private func setLayout() {
         journeyListDetailCollectionView.delegate = self
         journeyListDetailCollectionView.dataSource = self
@@ -46,6 +56,7 @@ class JourneyListDetailPageCollectionView: UICollectionViewCell {
             make.bottom.equalToSuperview()
         }
     }
+    
     func setObserver() {
         viewModel.loadingStarted = {
             

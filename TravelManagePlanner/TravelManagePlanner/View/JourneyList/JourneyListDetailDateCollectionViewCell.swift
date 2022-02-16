@@ -23,6 +23,15 @@ class JourneyListDetailDateCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
+    
+    override func prepareForReuse() {
+        self.backgroundColor = GlobalConstants.Color.Background.themeColor 
+        dateLabel.text = ""
+    }
+    
     func setLayout() {
         self.addSubview(dateLabel)
         
@@ -33,9 +42,11 @@ class JourneyListDetailDateCollectionViewCell: UICollectionViewCell {
             make.bottom.equalToSuperview()
         }
     }
+    
     func setLabelName(name: String) {
         dateLabel.text = name
     }
+    
     private func setSelected(_ selected: Bool) {
             if selected {
                 self.backgroundColor = .red

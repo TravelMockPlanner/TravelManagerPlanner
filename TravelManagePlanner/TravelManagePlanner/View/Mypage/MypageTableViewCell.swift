@@ -34,7 +34,13 @@ class MypageTableViewCell: UITableViewCell {
         super.awakeFromNib()
         
     }
-
+    
+    override func prepareForReuse() {
+        self.backgroundColor = GlobalConstants.Color.Background.themeColor
+        self.settingImageView.image = nil
+        label.text = ""
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
