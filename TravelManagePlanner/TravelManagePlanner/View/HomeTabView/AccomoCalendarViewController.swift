@@ -230,6 +230,7 @@ class AccomoCalendarViewController: UIViewController {
        
         homeTabViewModel.updateRecommendData(shopList: [accomoShopData])
         
+        
     }
 }
 
