@@ -10,7 +10,9 @@ import Foundation
 class HomeTabViewModel {
     
     // 모델 소유
-    static var globalHomeTabData = HomeTabRequest(uKey: "", title: "", startDate: "", endDate: "", inviteNum:"", price: "", theme: "", shopList: [])
+    static var globalHomeTabData = InputTravelInfoData.shared
+    
+    //HomeTabRequest(uKey: "", title: "", startDate: "", endDate: "", inviteNum:"", price: "", theme: "", shopList: [])
     
     // repository 소유
     private var repo = HomeTabRepository()
@@ -37,15 +39,15 @@ class HomeTabViewModel {
             changeTheme = "etc"
         }
         
-        HomeTabViewModel.globalHomeTabData.theme = changeTheme
-        HomeTabViewModel.globalHomeTabData.uKey = uKey // 유저키 받는부분 추후 설정필요
+        HomeTabViewModel.globalHomeTabData.inputTravelInfo.theme = changeTheme
+        HomeTabViewModel.globalHomeTabData.inputTravelInfo.uKey = uKey // 유저키 받는부분 추후 설정필요
     }
     
     
     
     // 숙박, 맛집, 놀거리 설정 업데이트
     func updateRecommendData(shopList: [HomeTabRequestData]) {
-        HomeTabViewModel.globalHomeTabData.shopList.append(contentsOf: shopList)
+        HomeTabViewModel.globalHomeTabData.inputTravelInfo.shopList.append(contentsOf: shopList)
 #if DEBUG
         print("accomoShopData", shopList)
         print("all Data: ", HomeTabViewModel.globalHomeTabData)

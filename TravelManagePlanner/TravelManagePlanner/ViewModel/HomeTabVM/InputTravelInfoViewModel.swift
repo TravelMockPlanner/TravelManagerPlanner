@@ -44,7 +44,7 @@ class InputTravelInfoViewModel {
         return storedJourneyList.storedTravelInfo[idx]
     }
     
-    func passJourneyInfoInDate(index: Int) -> [DestiSearchResponseData] {
+    func passJourneyInfoInDate(index: Int) -> [StoredTravelInfoData] {
         return storedJourneyList.storedTravelInfo.filter{
             if $0.visitDate == dateArr[index] || $0.leaveDate == dateArr[index] {
                 return true

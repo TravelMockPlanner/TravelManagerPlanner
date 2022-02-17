@@ -57,11 +57,11 @@ class DetaileSettingViewModel {
     }
     
     func register() {
-        HomeTabViewModel.globalHomeTabData.title = title
-        HomeTabViewModel.globalHomeTabData.startDate = dayToGo
-        HomeTabViewModel.globalHomeTabData.endDate = dayToCome
-        HomeTabViewModel.globalHomeTabData.inviteNum = peopleNum
-        HomeTabViewModel.globalHomeTabData.price = budget
+        HomeTabViewModel.globalHomeTabData.inputTravelInfo.title = title
+        HomeTabViewModel.globalHomeTabData.inputTravelInfo.startDate = dayToGo
+        HomeTabViewModel.globalHomeTabData.inputTravelInfo.endDate = dayToCome
+        HomeTabViewModel.globalHomeTabData.inputTravelInfo.inviteNum = peopleNum
+        HomeTabViewModel.globalHomeTabData.inputTravelInfo.price = budget
     }
     
 }
