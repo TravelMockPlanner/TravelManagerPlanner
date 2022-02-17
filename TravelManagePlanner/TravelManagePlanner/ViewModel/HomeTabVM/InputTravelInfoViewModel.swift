@@ -10,9 +10,9 @@ import Foundation
 class InputTravelInfoViewModel {
     
    
-    private var storedJourneyList = DestiSearchResponse.shared.data {
+    private var storedJourneyList = InputTravelInfoData.shared {
         didSet {
-            storedJourneyList.forEach {
+            storedJourneyList.storedTravelInfo.forEach {
                 self.dateDic[$0.visitDate] = true
                 self.dateDic[$0.leaveDate] = true
             }
@@ -33,60 +33,23 @@ class InputTravelInfoViewModel {
     var failedJourneyListUpdate: (() -> ()) = { }
     
     func count() -> Int {
-        return storedJourneyList.count
+        return storedJourneyList.storedTravelInfo.count
     }
     
     func dateCount() -> Int {
         return dateDic.count
     }
     
-    func journey(idx: Int) -> DestiSearchResponseData {
-        return storedJourneyList[idx]
+    func journey(idx: Int) -> StoredTravelInfoData {
+        return storedJourneyList.storedTravelInfo[idx]
     }
     
     func passJourneyInfoInDate(index: Int) -> [DestiSearchResponseData] {
-        return storedJourneyList.filter{
+        return storedJourneyList.storedTravelInfo.filter{
             if $0.visitDate == dateArr[index] || $0.leaveDate == dateArr[index] {
                 return true
             }
             return false
-        }
-    }
-    
-    func getData() {
-        self.loadingStarted()
-        repo.getJourneyDetialList(travelId: detailListIdx) { result in
-            switch result {
-            case .success(let detailData):
-                self.storedJourneyList = detailData.data
-                self.dataUpdated()
-                self.loadingEnded()
-            case .failure(let error):
-                self.loadingEnded()
-                switch error {
-                case .notFoundInDB:
-                    self.storedJourneyList = []
-                    self.dataUpdated()
-                case .unknown:
-                    print("알수 없는 오류")
-                case .jsonError:
-                    print("Json 오류")
-                case .invalidArgument:
-                    print("매개변수 오류")
-                case .badRequest:
-                    print("400")
-                case .notFound:
-                    print("404")
-                case .internalServerError:
-                    print("repo error")
-                case .omittedParams:
-                    print("params error")
-                case .ommittedHeader:
-                    print("header error")
-                case .invalidPw:
-                    print("Pw error")
-                }
-            }
         }
     }
 }
