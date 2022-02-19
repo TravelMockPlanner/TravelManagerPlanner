@@ -12,6 +12,7 @@ class HomeTabViewModel {
     // 모델 소유
     static var globalHomeTabData = InputTravelInfoData.shared
     
+    private var pendingStoredTravelData = StoredTravelInfoData(visitDate: "", leaveDate: "", imgUrl: "", address: "", sIdx: "", name: "", category: "", content: "")
     //HomeTabRequest(uKey: "", title: "", startDate: "", endDate: "", inviteNum:"", price: "", theme: "", shopList: [])
     
     // repository 소유
@@ -24,6 +25,16 @@ class HomeTabViewModel {
     var dataUpdated: (() -> ()) = { }
     var failedJourneyListUpdate: (() -> ()) = { }
     
+    func updateGloblaHomeTabeData(data: DestiSearchResponseData) {
+        let newStoredData = StoredTravelInfoData(visitDate: "", leaveDate: "", imgUrl: data.imgUrl, address: data.address, sIdx: String(data.idx), name: data.name, category: data.category, content: data.content)
+        
+        pendingStoredTravelData = newStoredData
+    }
+    func updateCartData(vDate: String, leaveDate: String) {
+        pendingStoredTravelData.visitDate = vDate
+        pendingStoredTravelData.leaveDate = leaveDate
+        HomeTabViewModel.globalHomeTabData.storedTravelInfo.append(pendingStoredTravelData)
+    }
     // 테마 데이터 업데이트
     func updateThemeData(theme: String, uKey: String) {
         // 디비에 넣을 데이터로변경

@@ -227,7 +227,7 @@ class AccomoCalendarViewController: UIViewController {
         
         
         let accomoShopData = HomeTabRequestData(sIdx: sIdx, vDate: vDate, leaveDate: leaveDate)
-       
+        homeTabViewModel.updateCartData(vDate: vDate, leaveDate: leaveDate) // 장바구니에 표시 될 데이터 저장
         homeTabViewModel.updateRecommendData(shopList: [accomoShopData])
         
         
