@@ -15,31 +15,30 @@ class DestiSearchViewModel {
     
     // 목적지 응답 모델 소유
     var destiSearchResponse = DestiSearchResponse.shared.data {
-            didSet {
-                destiSearchResponse.forEach {
-                    if categoryDic[$0.category] == nil {
-                        categoryDic[$0.category] = [$0]
-                    } else {
-                        var destList = categoryDic[$0.category]!
-                        destList.append($0)
-                        categoryDic[$0.category] = destList
-                    }
+        didSet {
+            destiSearchResponse.forEach {
+                if categoryDic[$0.category] == nil {
+                    categoryDic[$0.category] = [$0]
+                } else {
+                    var destList = categoryDic[$0.category]!
+                    destList.append($0)
+                    categoryDic[$0.category] = destList
                 }
             }
         }
-        
-        
-        // repository 소유
-        private var repo = HomeTabRepository()
-        
-        // 모델을 static
-        
-        // 유저입력 목적지
-        static var serchData = ""
-        
-        //category 대응 데이터
-        var categoryDic = [String: [DestiSearchResponseData]]()
-        
+    }
+    
+    
+    // repository 소유
+    private var repo = HomeTabDataRepository()
+    
+    // 모델을 static
+    
+    // 유저입력 목적지
+    static var serchData = ""
+    
+    //category 대응 데이터
+    var categoryDic = [String: [DestiSearchResponseData]]()
     
     // 상태 정의
     private var isLoading: Bool = false

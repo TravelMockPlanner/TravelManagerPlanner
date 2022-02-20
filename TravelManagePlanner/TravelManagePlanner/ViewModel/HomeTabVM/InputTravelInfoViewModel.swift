@@ -9,7 +9,6 @@ import Foundation
 
 class InputTravelInfoViewModel {
     
-   
     private var storedJourneyList = InputTravelInfoData.shared {
         didSet {
             storedJourneyList.storedTravelInfo.forEach {
@@ -45,11 +44,15 @@ class InputTravelInfoViewModel {
     }
     
     func passJourneyInfoInDate(index: Int) -> [StoredTravelInfoData] {
-        return storedJourneyList.storedTravelInfo.filter{
+        return storedJourneyList.storedTravelInfo.filter {
             if $0.visitDate == dateArr[index] || $0.leaveDate == dateArr[index] {
                 return true
             }
             return false
         }
+    }
+    
+    func getData() {
+        //storedJourneyList.storedTravelInfo
     }
 }

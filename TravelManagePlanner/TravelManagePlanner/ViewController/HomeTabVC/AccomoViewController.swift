@@ -68,8 +68,16 @@ class AccomoViewController: UIViewController {
     func setUpView() {
         view.addSubview(accomoHeadStack)
         view.addSubview(accomoTableView)
+        
+        // 장바구니 addTarget
+        basket.addTarget(self, action: #selector(moveToCart), for: .touchUpInside)
     }
-    
+    @objc func moveToCart() {
+        
+        let cartVC = InputTravelInfoViewController()
+        //cartVC.viewModel.
+        self.navigationController?.pushViewController(cartVC, animated: true)
+    }
     func setLayout() {
         accomoHeadStack.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).multipliedBy(1.1)
@@ -166,7 +174,7 @@ extension AccomoViewController: UITableViewDataSource {
         cell.accomoSubTitle.text = shopData.content
         cell.place = shopData.area
         cell.sIdx = shopData.idx
-        
+        cell.destinationData = shopData
         cell.cellDelegate = self
         
         return cell
@@ -175,15 +183,17 @@ extension AccomoViewController: UITableViewDataSource {
 
 extension AccomoViewController:ContentsMainTextDelegate {
     //달력 이동
-    func categoryButtonTapped(title: String, place: String, sIdx: Int) {
+    func categoryButtonTapped(title: String, place: String, sIdx: Int, destData: DestiSearchResponseData) {
         let nextView = UIStoryboard(name: "HomeTabSB", bundle: nil).instantiateViewController(withIdentifier: "AccomoCalendarViewSB") as! AccomoCalendarViewController
         
         nextView.accomoName = title
         nextView.accomoPlace = place
         nextView.accomoSIdx = sIdx
         
+        nextView.homeTabViewModel.updateGloblaHomeTabData(data: destData)
         // 다음화면에서 바텀탭 없애기
         nextView.hidesBottomBarWhenPushed = true
         self.present(nextView, animated: true)
     }
 }
+

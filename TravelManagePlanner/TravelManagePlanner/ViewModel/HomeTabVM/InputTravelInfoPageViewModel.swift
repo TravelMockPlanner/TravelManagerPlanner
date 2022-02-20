@@ -1,17 +1,16 @@
 //
-//  JourneyListDetailPageViewModel.swift
+//  InputTravelInfoPageViewModel.swift
 //  TravelManagePlanner
 //
-//  Created by UY on 2022/02/09.
+//  Created by UY on 2022/02/20.
 //
 
 import Foundation
 import UIKit
 
-
-class JourneyListDetailPageViewModel {
+class TravelInputListDetailPageViewModel {
     
-    private var journeyDetailList = [JourneyDetailData]() {
+    private var journeyDetailList = [StoredTravelInfoData]() {
         didSet{
             journeyDetailList.forEach {
                 if categoryDic[$0.category] == nil {
@@ -30,15 +29,15 @@ class JourneyListDetailPageViewModel {
     var dataUpdated: (() -> ()) = { }
     var failedJourneyListUpdate: (() -> ()) = { }
    
-    var categoryDic = [String: [JourneyDetailData]]()
+    var categoryDic = [String: [StoredTravelInfoData]]()
     var categoryInOrder = ["1","2","3"] // category 바꿔야함 - 숙박, 여가, 음식점
     
-    func journey(idx: Int) -> JourneyDetailData {
+    func journey(idx: Int) -> StoredTravelInfoData {
         return journeyDetailList[idx]
     }
                 
-    func destination(idx: Int) -> Int {
-        return journeyDetailList[idx].idx
+    func destination(idx: Int) -> String {
+        return journeyDetailList[idx].sIdx
     }
     
     func categoriesCount() -> Int {
@@ -59,9 +58,9 @@ class JourneyListDetailPageViewModel {
         return img
     }
     
-    func getList(journeyDetailDataFromPageCollectionView: [JourneyDetailData]) {
+    func getList(journeyDetailDataFromPageCollectionView: [StoredTravelInfoData]) {
         self.journeyDetailList = journeyDetailDataFromPageCollectionView
         self.dataUpdated()
     }
-    
 }
+

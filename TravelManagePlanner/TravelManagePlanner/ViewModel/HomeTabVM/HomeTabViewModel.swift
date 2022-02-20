@@ -15,8 +15,9 @@ class HomeTabViewModel {
     private var pendingStoredTravelData = StoredTravelInfoData(visitDate: "", leaveDate: "", imgUrl: "", address: "", sIdx: "", name: "", category: "", content: "")
     //HomeTabRequest(uKey: "", title: "", startDate: "", endDate: "", inviteNum:"", price: "", theme: "", shopList: [])
     
+    
     // repository 소유
-    private var repo = HomeTabRepository()
+    private var repo = HomeTabDataRepository()
     
     // 상태 정의
     private var isLoading: Bool = false
@@ -25,7 +26,7 @@ class HomeTabViewModel {
     var dataUpdated: (() -> ()) = { }
     var failedJourneyListUpdate: (() -> ()) = { }
     
-    func updateGloblaHomeTabeData(data: DestiSearchResponseData) {
+    func updateGloblaHomeTabData(data: DestiSearchResponseData) {
         let newStoredData = StoredTravelInfoData(visitDate: "", leaveDate: "", imgUrl: data.imgUrl, address: data.address, sIdx: String(data.idx), name: data.name, category: data.category, content: data.content)
         
         pendingStoredTravelData = newStoredData

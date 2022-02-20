@@ -9,7 +9,7 @@ import UIKit
 
 class InputTravelInfoViewController: UIViewController {
 
-    var viewModel = JourneyListDetailViewModel()
+    var viewModel = InputTravelInfoViewModel()
     
     let storedJourneyList = DestiSearchResponse.shared.data
     
@@ -41,6 +41,9 @@ class InputTravelInfoViewController: UIViewController {
     }
     
     private func setLayout() {
+        
+        self.view.backgroundColor = GlobalConstants.Color.Background.themeColor
+        
         view.addSubview(journeyListDetailDateCollectionView)
         view.addSubview(journeyListDetailPageCollectionView)
         
@@ -64,7 +67,7 @@ class InputTravelInfoViewController: UIViewController {
         // 페이지 컬렉션뷰
         journeyListDetailPageCollectionView.delegate = self
         journeyListDetailPageCollectionView.dataSource = self
-        viewModel.getData()
+        //viewModel.getData()
     }
     private func setObserver() {
         viewModel.loadingStarted = {
@@ -77,7 +80,7 @@ class InputTravelInfoViewController: UIViewController {
             self.journeyListDetailDateCollectionView.reloadData()
             self.journeyListDetailPageCollectionView.reloadData()
         }
-        viewModel.getData()
+        //viewModel.getData()
     }
 }
 extension InputTravelInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
