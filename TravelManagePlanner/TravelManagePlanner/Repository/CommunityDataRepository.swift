@@ -18,14 +18,22 @@ class CommunityDataRepository {
     
     // do - catch로 수정 예정
     // 전체 커뮤니티 데이터 불러오기
-    func getCommunityData(completed: @escaping (CommunityData) -> Void) { httpClient.getJsonData(path: "/rvw/getReviewList.tpi", params: params) { result in
-        let data = try! result.get()
-        let decodedData = try? JSONDecoder().decode(CommunityData.self, from: data)
-        if let communityList = decodedData {
-            completed(communityList)
-        }
-        else {
-            print("getCommunity error in CommunityDataRepository")
+    func getCommunityData(completed: @escaping (CommunityData) -> Void) { httpClient.getJsonData(path: "/rvw/getReviewList.tpi", params: params)
+        { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let decodedData = try JSONDecoder().decode(CommunityData.self, from: data)
+                    completed(decodedData)
+                } catch {
+                    #if DEBUG
+                    print("getJourneyList Decoidng error in \(#function)")
+                    #endif
+                }
+            case .failure(_):
+                #if DEBUG
+                print("getJourneyList getJsonerro in \(#function) error")
+                #endif
             }
         }
     }

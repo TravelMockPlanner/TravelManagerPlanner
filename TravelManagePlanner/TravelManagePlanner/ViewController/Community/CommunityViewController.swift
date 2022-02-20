@@ -10,14 +10,13 @@ import SnapKit
 import Then
 import JJFloatingActionButton
 
-let communityFloatingButton = CommunityFloatingButtonClass().communityFloatingButton
-let cellId: String = "Cell"
-let commuinityCategorydata = ["전체", "연인", "가족", "친구", "기타"]
-let themeColor = GlobalConstants.Color.Background.themeColor
-
 class CommunityViewController: UIViewController {
     
     // MARK: - Properties
+    let communityFloatingButton = CommunityFloatingButtonClass().communityFloatingButton
+    let cellId: String = "Cell"
+    let commuinityCategorydata = ["전체", "연인", "가족", "친구", "기타"]
+    let themeColor = GlobalConstants.Color.Background.themeColor
     var flag : Bool = false
     var communityViewModel: CommunityViewModel!
     private var journeyList = JourneyList.shared.data
@@ -231,34 +230,24 @@ class CommunityViewController: UIViewController {
 // MARK: - extensions
 extension CommunityViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return communityViewModel.communityDataListCount()
+        // 데모 수정
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! CommunityCollectionViewCell
         let communityDataInfo = communityViewModel.getCommunity(index: indexPath.row)
         cell.backgroundColor = themeColor
+        // Demo
         cell.setData(communityDataInfo)
-    
-//        if (flag == true && indexPath.row == 0) {
-//            print("if문 안 indexPath.row => ", indexPath.row)
-//            cell.layer.borderWidth = 1
-//            cell.layer.borderColor = UIColor.red.cgColor
-//            flag = false
-//        } else {
-//            print("else 밖 indexPath.row => ", indexPath.row)#imageLiteral(resourceName: "simulator_screenshot_63100446-18B2-415C-94E8-E2A115AD9F0E.png")
-//        }
-//        if (flag2 == true && indexPath.row == 0) {
-//            cell.layer.borderColor = themeColor.cgColor
-//            flag2 = false
-//        }
+//        cell.demoSetData(index: indexPath.row)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let communityDetailVC = DestinationDetailViewController()
-//        self.navigationController!.pushViewController(communityDetailVC, animated: true)
+        let communityDetailVC = DestinationDetailViewController()
+        self.navigationController!.pushViewController(communityDetailVC, animated: true)
         print("Clicked \(indexPath.row)")
     }
 }

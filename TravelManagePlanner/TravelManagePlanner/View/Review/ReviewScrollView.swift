@@ -109,7 +109,7 @@ class ReviewScrollView: UIScrollView {
         $0.layer.shadowOffset = CGSize(width: 1, height: 0)
         $0.layer.shadowRadius = 1
         $0.layer.shadowOpacity = 0.4
-
+        $0.sizeToFit()
     }
     
     lazy var photoTitle = UILabel().then {
@@ -273,7 +273,6 @@ class ReviewScrollView: UIScrollView {
             $0.leading.equalTo(headerview.snp.leading).offset(30)
             $0.height.equalTo(30)
         }
-        
         
         reviewPhotoCollectionView.snp.makeConstraints {
             $0.width.equalTo(ReviewContentView.snp.width).multipliedBy(0.9)

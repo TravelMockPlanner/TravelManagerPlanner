@@ -221,15 +221,15 @@ class ReviewWriteViewController: UIViewController {
         reviewDataWillSendToVM.shopList = shopListSendFromCommunity
         
         if (self.reviewView.hashtagTextView.text == "해쉬태그를 작성해주세요."){
-            let alert = UIAlertController(title: "해쉬태그를 작성해주세요.", message: "한 개 이상 해쉬태그를 작성해주세요.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "한 개 이상 해쉬태그를 작성해주세요.", message: "", preferredStyle: .alert)
             alert.addAction(okAction)
             present(alert, animated: true)
         } else if (self.reviewView.reviewTextView.text == "리뷰를 작성해주세요." ) {
-            let alert = UIAlertController(title: "리뷰를 작성해주세요.", message: "한 글자 이상 작성해주세요.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "한 글자 이상 리뷰를 작성해주세요.", message: "", preferredStyle: .alert)
             alert.addAction(okAction)
             present(alert, animated: true)
         } else if (self.selectedImages.isEmpty) {
-            let alert = UIAlertController(title: "사진을 첨부해주세요.", message: "한 개 이상의 사진을 넣어주세요.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "한 개 이상 사진을 첨부해주세요.", message: "", preferredStyle: .alert)
             alert.addAction(okAction)
             present(alert, animated: true)
         } else {

@@ -14,6 +14,27 @@ class CommunityCollectionViewCell: UICollectionViewCell {
     // MARK: Properties
     
     var communityViewModel: CommunityViewModel!
+    //Demo
+//    let demoImgUrl : [String] = ["https://ifh.cc/g/1XaIwR.jpg",
+//                             "https://ifh.cc/g/1JyuHA.jpg",
+//                             "https://ifh.cc/g/uKhzEr.jpg",
+//                             "https://ifh.cc/g/Ee5di6.jpg",
+//                             "https://ifh.cc/g/O2xYzA.jpg",
+//                             "https://ifh.cc/g/rH1nZN.jpg"]
+//
+//    let demoTitle : [String] = ["혜빈이와 100일 여행",
+//                                "오늘 민수 생일 축하여행 😀",
+//                                "2월 12일 제주도에 다녀왔습니다.",
+//                                "전주에 부모님과 여행...",
+//                                "단양 고수동굴 가보셨나요?",
+//                                "2022년 보드동아리 모임"]
+//
+//    let demoHasgTag : [String] = ["#여자친구 #100일여행 #부산여행",
+//                                  "#생일여행 #남자친구 #🥰",
+//                                  "#2월 #제주도 #한라산 #폭설",
+//                                  "#전주 #육회비빔밥 #한뚝배기",
+//                                  "#단양 #고수동굴 #당일치기",
+//                                  "#보드동아리 #원주오크밸리 #보드"]
     
     lazy var imageShadowView = UIView().then {
         $0.layer.shadowOffset = CGSize(width: 2, height: 2)
@@ -26,12 +47,13 @@ class CommunityCollectionViewCell: UICollectionViewCell {
         $0.layer.cornerRadius = 10
         $0.clipsToBounds = true
         $0.backgroundColor = .lightGray
+        $0.contentMode = .scaleAspectFill
     }
     
     lazy var communityCollectionViewTitle = UILabel().then {
         $0.textColor = .black
         $0.textAlignment = .center
-        $0.font = .boldSystemFont(ofSize: 20)
+        $0.font = .boldSystemFont(ofSize: 16)
         $0.backgroundColor = GlobalConstants.Color.Background.themeColor
     }
     
@@ -108,4 +130,12 @@ class CommunityCollectionViewCell: UICollectionViewCell {
         self.communityCollectionViewTitle.text = communityDataDetail.title
             self.communityCollectionViewHashtags.text = communityDataDetail.tags
     }
+    
+//    func demoSetData(index : Int) {
+//        ImageLoader.loadImage(url: demoImgUrl[index]) { [weak self] image in
+//                self?.communityCollectionViewImage.image = image
+//            }
+//        self.communityCollectionViewTitle.text = demoTitle[index]
+//            self.communityCollectionViewHashtags.text = demoHasgTag[index]
+//    }
 }
