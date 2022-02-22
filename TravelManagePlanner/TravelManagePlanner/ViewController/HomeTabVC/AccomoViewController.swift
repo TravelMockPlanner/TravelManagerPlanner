@@ -75,7 +75,7 @@ class AccomoViewController: UIViewController {
     @objc func moveToCart() {
         
         let cartVC = InputTravelInfoViewController()
-        //cartVC.viewModel.
+        cartVC.viewModel.getDateCount()
         self.navigationController?.pushViewController(cartVC, animated: true)
     }
     func setLayout() {

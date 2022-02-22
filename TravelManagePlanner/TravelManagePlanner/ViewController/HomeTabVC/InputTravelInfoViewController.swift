@@ -11,8 +11,6 @@ class InputTravelInfoViewController: UIViewController {
 
     var viewModel = InputTravelInfoViewModel()
     
-    let storedJourneyList = DestiSearchResponse.shared.data
-    
     private lazy var journeyListDetailDateCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -80,12 +78,13 @@ class InputTravelInfoViewController: UIViewController {
             self.journeyListDetailDateCollectionView.reloadData()
             self.journeyListDetailPageCollectionView.reloadData()
         }
-        //viewModel.getData()
+        viewModel.getDateCount()
     }
 }
 extension InputTravelInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { // 날짜의 일수 리턴
+        print(viewModel.dateCount())
         return viewModel.dateCount()
     }
     
@@ -97,7 +96,7 @@ extension InputTravelInfoViewController: UICollectionViewDelegate, UICollectionV
             
             let cell = journeyListDetailDateCollectionView.dequeueReusableCell(withReuseIdentifier: "dateCell", for: indexPath) as! JourneyListDetailDateCollectionViewCell
             cell.setLayout()
-            cell.setLabelName(name: viewModel.journey(idx: indexPath.row).visitDate)
+            cell.setLabelName(name: viewModel.getAllDate(idx: indexPath.row))
             
             if indexPath.row == 0 {
                 cell.isSelected = true
@@ -118,6 +117,7 @@ extension InputTravelInfoViewController: UICollectionViewDelegate, UICollectionV
             
             // 해당 index 날짜에 대한 모든 여행 데이터를 넘김 나머진 알아서
             cell.viewModel.getList(journeyDetailDataFromPageCollectionView: viewModel.passJourneyInfoInDate(index: indexPath.row))
+            
             return cell
         }
     }
