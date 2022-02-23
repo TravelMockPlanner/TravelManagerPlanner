@@ -11,6 +11,12 @@ class InputTravelInfoViewController: UIViewController {
 
     var viewModel = InputTravelInfoViewModel()
     
+    lazy var completedButton: UIButton = {
+        var button = UIButton()
+        button.setTitle("저장", for: .normal)
+        return button
+    }()
+    
     private lazy var journeyListDetailDateCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -39,6 +45,9 @@ class InputTravelInfoViewController: UIViewController {
     }
     
     private func setLayout() {
+        
+        let inputButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(inputTravelInfo))
+        self.navigationItem.rightBarButtonItem = inputButton
         
         self.view.backgroundColor = GlobalConstants.Color.Background.themeColor
         
@@ -80,7 +89,13 @@ class InputTravelInfoViewController: UIViewController {
         }
         viewModel.getDateCount()
     }
+    
+    @objc func inputTravelInfo() {
+        print("touched")
+    }
+    
 }
+
 extension InputTravelInfoViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { // 날짜의 일수 리턴

@@ -25,5 +25,7 @@ enum URLManager {
     enum Settings {
         static var checkingVersion = "/cmn/getVersionInfo.tpi"
     }
-    
+    enum Main {
+        static var inputTravelInfo = "/plan/inputTravelInfo.tpi"
+    }
 }

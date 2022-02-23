@@ -64,4 +64,8 @@ class InputTravelInfoViewModel {
         }
         dateArr = dateDic.sorted{ $0.key < $1.key }.map{ $0.key }
     }
+    
+    func postTravelInfo() {
+        
+    }
 }
