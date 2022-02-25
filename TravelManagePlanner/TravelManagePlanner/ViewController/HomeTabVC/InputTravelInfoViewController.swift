@@ -91,7 +91,7 @@ class InputTravelInfoViewController: UIViewController {
     }
     
     @objc func inputTravelInfo() {
-        print("touched")
+        viewModel.postTravelInfo()
     }
     
 }

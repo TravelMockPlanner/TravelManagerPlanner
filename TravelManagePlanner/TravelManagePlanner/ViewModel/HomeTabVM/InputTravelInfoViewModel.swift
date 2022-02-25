@@ -19,7 +19,7 @@ class InputTravelInfoViewModel {
         }
     }
     
-    private var repo = JourneyListRepository()
+    private var repo = InputTravelInfoRepository()
     
     var detailListIdx = Int.max
     
@@ -66,6 +66,8 @@ class InputTravelInfoViewModel {
     }
     
     func postTravelInfo() {
-        
+        repo.inputTravelInfo {
+            
+        }
     }
 }
